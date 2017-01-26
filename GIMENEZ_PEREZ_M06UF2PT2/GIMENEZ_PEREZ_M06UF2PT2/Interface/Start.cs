@@ -10,16 +10,28 @@ using System.Windows.Forms;
 
 namespace GIMENEZ_PEREZ_M06UF2PT2
 {
-    public partial class Form1 : Form
+    public partial class Start : Form
     {
-        public Form1()
+        public Start()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Login l1 = new Login();
+            l1.Show();
 
+            this.Hide();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            NewUser nw1 = new NewUser();
+            nw1.Show();
+
+            this.Hide();
         }
     }
 }
