@@ -14,31 +14,56 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
     {
         public Login()
         {
-            msgerror.Visible = false;
             InitializeComponent();
+            msgerror.Visible = false;
         }
         
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            GIMENEZ_PEREZ_M06UF2PT2.Interface.RestorePass r = new GIMENEZ_PEREZ_M06UF2PT2.Interface.RestorePass();
+            r.Show();
 
+            this.Hide();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            msgerror.Visible = false;
             bool entra = false;
+            bool entraAdmin = false;
             DB db = DB.getInstance();
             var clientes = db.TableClients;
             foreach (var c in clientes)
             {
                 if (c.usuario == userL.Text && c.password == pass.Text)
-                    entra = true;
+                {
+                    if(c.type == 0)
+                    {
+                        entra = true;
+
+                    }else
+                    {
+                        entraAdmin = true;
+                    }
+                }
             }
 
-            if (entra)
+            if (entraAdmin)
             {
                 msgerror.Visible = false;
+                GIMENEZ_PEREZ_M06UF2PT2.Interface.PrincipalAdmin a = new GIMENEZ_PEREZ_M06UF2PT2.Interface.PrincipalAdmin();
+                a.Show();
 
+                this.Hide();
+
+            }
+            else if (entra) {
+                msgerror.Visible = false;
+                GIMENEZ_PEREZ_M06UF2PT2.Interface.PrincipalUser u = new GIMENEZ_PEREZ_M06UF2PT2.Interface.PrincipalUser();
+                u.Show();
+
+                this.Hide();
             }
             else {
                 userL.Text = "";

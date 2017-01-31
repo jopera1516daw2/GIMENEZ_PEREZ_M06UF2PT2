@@ -26,6 +26,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
             var cliente = new TableClients {
                 usuario = nuUser.Text,
                 password = nuPassword.Text,
+                type = 0,
                 codi_postal = 0,
                 telefon = 0,
                 fax = 0,

@@ -166,6 +166,24 @@
     <Compile Include="Interface\NewUser.Designer.cs">
       <DependentUpon>NewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interface\PrincipalAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\PrincipalAdmin.Designer.cs">
+      <DependentUpon>PrincipalAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\PrincipalUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\PrincipalUser.Designer.cs">
+      <DependentUpon>PrincipalUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\RestorePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\RestorePass.Designer.cs">
+      <DependentUpon>RestorePass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interface\Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +202,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interface\NewUser.resx">
       <DependentUpon>NewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\PrincipalAdmin.resx">
+      <DependentUpon>PrincipalAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\RestorePass.resx">
+      <DependentUpon>RestorePass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface\Start.resx">
       <DependentUpon>Start.cs</DependentUpon>

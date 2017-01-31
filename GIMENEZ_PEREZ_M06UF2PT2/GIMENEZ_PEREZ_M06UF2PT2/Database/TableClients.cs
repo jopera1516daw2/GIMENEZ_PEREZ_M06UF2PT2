@@ -35,6 +35,8 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
         public string password { get; set; }
         [Column("usuario")]
         public string usuario { get; set; }
+        [Column("type")]
+        public int type { get; set; }
     }
     
 }
