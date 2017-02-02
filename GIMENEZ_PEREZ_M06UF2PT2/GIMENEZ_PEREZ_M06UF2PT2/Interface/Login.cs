@@ -72,5 +72,14 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
             }
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            msgerror.Visible = false;
+            Start s = new Start();
+            s.Show();
+
+            this.Hide();
+        }
     }
 }

@@ -45,5 +45,13 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
             goBack.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Start s = new Start();
+            s.Show();
+
+            this.Hide();
+        }
     }
 }
