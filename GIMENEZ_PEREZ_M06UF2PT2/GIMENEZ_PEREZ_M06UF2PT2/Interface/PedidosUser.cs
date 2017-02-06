@@ -17,7 +17,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
         {
             InitializeComponent();
             bool contador = false;
-            DB db = DB.getInstance();
+            DB db = new DB();
             var productos = db.TableProductes;
             foreach (var p in productos)
             {

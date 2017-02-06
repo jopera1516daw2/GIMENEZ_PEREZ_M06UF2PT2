@@ -20,7 +20,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DB db = DB.getInstance();
+            DB db = new DB();
             XNamespace ns = "http://CSEFStoreXmlFiles";
             XElement clientsXml = new XElement(ns + "clients",
                 from c in db.TableClients.AsEnumerable()
@@ -79,16 +79,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
 
         private void button2_Click(object sender, EventArgs e)
         {
-            /*IEnumerable<TableClients> clients =
-            from c in document.Descendants("Course")
-            select new Course
-            {
-                CourseID = c.Element("CourseId") == null ?
-                Guid.NewGuid().ToString() : c.Element("CourseId").Value,
-                Title = c.Element("Title") == null ? null : c.Element("Title").Value,
-                Credits = c.Element("Credits") == null ? -1 : Int32.Parse(c.Element("Credits").Value),
-                Department = c.Element("Department") == null ? null : c.Element("Department").Value
-            };*/
+            
         }
     }
 }

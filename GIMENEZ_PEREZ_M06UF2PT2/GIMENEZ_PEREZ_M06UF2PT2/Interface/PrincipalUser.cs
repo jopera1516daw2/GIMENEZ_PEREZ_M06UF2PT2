@@ -38,5 +38,13 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
 
             this.Hide();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            PerfilUser p = new PerfilUser();
+            p.Show();
+
+            this.Hide();
+        }
     }
 }

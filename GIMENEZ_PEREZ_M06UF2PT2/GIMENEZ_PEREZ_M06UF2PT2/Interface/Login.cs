@@ -32,7 +32,8 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
             msgerror.Visible = false;
             bool entra = false;
             bool entraAdmin = false;
-            DB db = DB.getInstance();
+            DB db = new DB();
+            GIMENEZ_PEREZ_M06UF2PT2.Interface.Config config = GIMENEZ_PEREZ_M06UF2PT2.Interface.Config.getInstance();
             var clientes = db.TableClients;
             foreach (var c in clientes)
             {
@@ -40,8 +41,8 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
                 {
                     if(c.type == 0)
                     {
-                        db.currentUser = userL.Text;
-                        db.currentDireccion = c.adreca;
+                        config.currentUser = userL.Text;
+                        config.currentDireccion = c.adreca;
                         entra = true;
 
                     }else

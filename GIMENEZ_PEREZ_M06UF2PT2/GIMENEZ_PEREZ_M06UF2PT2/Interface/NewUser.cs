@@ -21,7 +21,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
         {
             string usuario = nuUser.Text;
             string password = nuPassword.Text;
-            DB db = DB.getInstance();
+            DB db = new DB();
 
             var cliente = new TableClients {
                 usuario = nuUser.Text,

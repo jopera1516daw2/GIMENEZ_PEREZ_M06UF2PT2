@@ -27,7 +27,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
 
             try
             {
-                using (var db = DB.getInstance())
+                using (var db = new DB())
                 {
                     var result = db.TableClients.Where(c2 => c2.usuario == rpUser.Text && c2.nom == rpNombre.Text).SingleOrDefault();
                     result.password = rpNewPassword.Text;
@@ -59,5 +59,6 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
 
             this.Hide();
         }
+        
     }
 }

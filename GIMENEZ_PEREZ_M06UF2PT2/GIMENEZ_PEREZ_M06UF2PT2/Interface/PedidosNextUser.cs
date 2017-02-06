@@ -25,9 +25,10 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
             this.producte = producte;
             this.quantitatP = quantitat;
             this.preu = preu;
-            DB db = DB.getInstance();
-            usuario.Text = db.currentUser;
-            direccion.Text = db.currentDireccion;
+            DB db = new DB();
+            Config config = Config.getInstance();
+            usuario.Text = config.currentUser;
+            direccion.Text = config.currentDireccion;
             msgCorrect.Visible = false;
             msgerror.Visible = false;
         }
@@ -38,7 +39,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
             msgerror.Visible = false;
             int id = -1;
             int nfactura = -1;
-            DB db = DB.getInstance();
+            DB db = new DB();
             foreach (var c in db.TableClients)
             {
                 if (c.usuario == usuario.Text && c.password == password.Text)

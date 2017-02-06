@@ -16,7 +16,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
         public Start()
         {
             InitializeComponent();
-            DB db = DB.getInstance();
+            DB db = new DB();
         }
 
         private void button1_Click(object sender, EventArgs e)
