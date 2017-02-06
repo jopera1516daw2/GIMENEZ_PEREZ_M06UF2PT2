@@ -31,17 +31,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.producto = new System.Windows.Forms.TextBox();
+            this.cantidad = new System.Windows.Forms.TextBox();
+            this.precio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.usuario = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.password = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.direccion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.fecha = new System.Windows.Forms.DateTimePicker();
+            this.finalizar = new System.Windows.Forms.Button();
+            this.msgerror = new System.Windows.Forms.Label();
+            this.msgCorrect = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -72,26 +75,29 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Precio";
             // 
-            // textBox1
+            // producto
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 20);
-            this.textBox1.TabIndex = 3;
+            this.producto.Enabled = false;
+            this.producto.Location = new System.Drawing.Point(85, 28);
+            this.producto.Name = "producto";
+            this.producto.Size = new System.Drawing.Size(126, 20);
+            this.producto.TabIndex = 3;
             // 
-            // textBox2
+            // cantidad
             // 
-            this.textBox2.Location = new System.Drawing.Point(289, 28);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(26, 20);
-            this.textBox2.TabIndex = 4;
+            this.cantidad.Enabled = false;
+            this.cantidad.Location = new System.Drawing.Point(289, 28);
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Size = new System.Drawing.Size(26, 20);
+            this.cantidad.TabIndex = 4;
             // 
-            // textBox3
+            // precio
             // 
-            this.textBox3.Location = new System.Drawing.Point(385, 28);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(26, 20);
-            this.textBox3.TabIndex = 5;
+            this.precio.Enabled = false;
+            this.precio.Location = new System.Drawing.Point(385, 28);
+            this.precio.Name = "precio";
+            this.precio.Size = new System.Drawing.Size(26, 20);
+            this.precio.TabIndex = 5;
             // 
             // label4
             // 
@@ -102,12 +108,13 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Usuario";
             // 
-            // textBox4
+            // usuario
             // 
-            this.textBox4.Location = new System.Drawing.Point(85, 84);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(126, 20);
-            this.textBox4.TabIndex = 7;
+            this.usuario.Enabled = false;
+            this.usuario.Location = new System.Drawing.Point(85, 84);
+            this.usuario.Name = "usuario";
+            this.usuario.Size = new System.Drawing.Size(126, 20);
+            this.usuario.TabIndex = 7;
             // 
             // label5
             // 
@@ -118,13 +125,13 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Contraseña";
             // 
-            // textBox5
+            // password
             // 
-            this.textBox5.Location = new System.Drawing.Point(302, 84);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PasswordChar = '*';
-            this.textBox5.Size = new System.Drawing.Size(109, 20);
-            this.textBox5.TabIndex = 9;
+            this.password.Location = new System.Drawing.Point(302, 84);
+            this.password.Name = "password";
+            this.password.PasswordChar = '*';
+            this.password.Size = new System.Drawing.Size(109, 20);
+            this.password.TabIndex = 9;
             // 
             // label6
             // 
@@ -135,12 +142,12 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Dirección";
             // 
-            // textBox6
+            // direccion
             // 
-            this.textBox6.Location = new System.Drawing.Point(85, 144);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(326, 20);
-            this.textBox6.TabIndex = 11;
+            this.direccion.Location = new System.Drawing.Point(85, 144);
+            this.direccion.Name = "direccion";
+            this.direccion.Size = new System.Drawing.Size(326, 20);
+            this.direccion.TabIndex = 11;
             // 
             // label7
             // 
@@ -151,21 +158,56 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Fecha";
             // 
-            // dateTimePicker1
+            // fecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(85, 194);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(198, 20);
-            this.dateTimePicker1.TabIndex = 13;
+            this.fecha.Location = new System.Drawing.Point(85, 194);
+            this.fecha.Name = "fecha";
+            this.fecha.Size = new System.Drawing.Size(198, 20);
+            this.fecha.TabIndex = 13;
+            // 
+            // finalizar
+            // 
+            this.finalizar.Location = new System.Drawing.Point(314, 194);
+            this.finalizar.Name = "finalizar";
+            this.finalizar.Size = new System.Drawing.Size(97, 23);
+            this.finalizar.TabIndex = 14;
+            this.finalizar.Text = "Finalizar pedido";
+            this.finalizar.UseVisualStyleBackColor = true;
+            this.finalizar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // msgerror
+            // 
+            this.msgerror.AutoSize = true;
+            this.msgerror.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.msgerror.ForeColor = System.Drawing.Color.Red;
+            this.msgerror.Location = new System.Drawing.Point(50, 229);
+            this.msgerror.Name = "msgerror";
+            this.msgerror.Size = new System.Drawing.Size(44, 20);
+            this.msgerror.TabIndex = 15;
+            this.msgerror.Text = "Error";
+            this.msgerror.Visible = false;
+            // 
+            // msgCorrect
+            // 
+            this.msgCorrect.AutoSize = true;
+            this.msgCorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.msgCorrect.ForeColor = System.Drawing.Color.Green;
+            this.msgCorrect.Location = new System.Drawing.Point(50, 229);
+            this.msgCorrect.Name = "msgCorrect";
+            this.msgCorrect.Size = new System.Drawing.Size(233, 20);
+            this.msgCorrect.TabIndex = 16;
+            this.msgCorrect.Text = "Pedido realizado correctamente";
+            this.msgCorrect.Visible = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(314, 194);
+            this.button1.Location = new System.Drawing.Point(314, 226);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Finalizar pedido";
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Volver";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // PedidosNextUser
             // 
@@ -173,17 +215,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 261);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.msgCorrect);
+            this.Controls.Add(this.msgerror);
+            this.Controls.Add(this.finalizar);
+            this.Controls.Add(this.fecha);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.direccion);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.password);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.usuario);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.precio);
+            this.Controls.Add(this.cantidad);
+            this.Controls.Add(this.producto);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -199,17 +244,20 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox producto;
+        private System.Windows.Forms.TextBox cantidad;
+        private System.Windows.Forms.TextBox precio;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox usuario;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox direccion;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker fecha;
+        private System.Windows.Forms.Button finalizar;
+        private System.Windows.Forms.Label msgerror;
+        private System.Windows.Forms.Label msgCorrect;
         private System.Windows.Forms.Button button1;
     }
 }

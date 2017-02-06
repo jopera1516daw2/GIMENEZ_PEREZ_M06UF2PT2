@@ -14,7 +14,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
         [Column("id_client")]
         public int id_client { get; set; }
         [Column("data")]
-        public string data { get; set; }
+        public System.DateTime data { get; set; }
         [Column("descompte")]
         public int descompte { get; set; }
         [Column("iva")]

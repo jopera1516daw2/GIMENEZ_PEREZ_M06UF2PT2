@@ -30,7 +30,8 @@
         {
             this.btAdminUser = new System.Windows.Forms.Button();
             this.btAdminProductos = new System.Windows.Forms.Button();
-            this.btAdminFactura = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btAdminUser
@@ -44,28 +45,40 @@
             // 
             // btAdminProductos
             // 
-            this.btAdminProductos.Location = new System.Drawing.Point(102, 109);
+            this.btAdminProductos.Location = new System.Drawing.Point(102, 102);
             this.btAdminProductos.Name = "btAdminProductos";
             this.btAdminProductos.Size = new System.Drawing.Size(75, 23);
             this.btAdminProductos.TabIndex = 1;
             this.btAdminProductos.Text = "Productos";
             this.btAdminProductos.UseVisualStyleBackColor = true;
             // 
-            // btAdminFactura
+            // button1
             // 
-            this.btAdminFactura.Location = new System.Drawing.Point(102, 171);
-            this.btAdminFactura.Name = "btAdminFactura";
-            this.btAdminFactura.Size = new System.Drawing.Size(75, 23);
-            this.btAdminFactura.TabIndex = 2;
-            this.btAdminFactura.Text = "Facturas";
-            this.btAdminFactura.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(102, 158);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Exportar BD";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(102, 213);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Importar BD";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // PrincipalAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.btAdminFactura);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btAdminProductos);
             this.Controls.Add(this.btAdminUser);
             this.Name = "PrincipalAdmin";
@@ -78,6 +91,7 @@
 
         private System.Windows.Forms.Button btAdminUser;
         private System.Windows.Forms.Button btAdminProductos;
-        private System.Windows.Forms.Button btAdminFactura;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

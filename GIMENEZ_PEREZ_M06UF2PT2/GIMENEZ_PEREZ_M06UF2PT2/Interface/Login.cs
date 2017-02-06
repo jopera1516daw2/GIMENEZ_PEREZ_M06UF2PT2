@@ -40,6 +40,8 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
                 {
                     if(c.type == 0)
                     {
+                        db.currentUser = userL.Text;
+                        db.currentDireccion = c.adreca;
                         entra = true;
 
                     }else

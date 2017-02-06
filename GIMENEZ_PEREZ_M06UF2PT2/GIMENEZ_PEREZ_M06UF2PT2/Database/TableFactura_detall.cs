@@ -15,6 +15,6 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
         [Column("id_producte")]
         public int id_producte { get; set; }
         [Column("quantitat")]
-        public string quantitat { get; set; }
+        public int quantitat { get; set; }
     }
 }

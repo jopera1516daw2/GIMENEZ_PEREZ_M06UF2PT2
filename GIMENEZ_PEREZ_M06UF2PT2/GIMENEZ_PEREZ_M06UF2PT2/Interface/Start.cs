@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace GIMENEZ_PEREZ_M06UF2PT2
 {
@@ -15,6 +16,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
         public Start()
         {
             InitializeComponent();
+            DB db = DB.getInstance();
         }
 
         private void button1_Click(object sender, EventArgs e)
