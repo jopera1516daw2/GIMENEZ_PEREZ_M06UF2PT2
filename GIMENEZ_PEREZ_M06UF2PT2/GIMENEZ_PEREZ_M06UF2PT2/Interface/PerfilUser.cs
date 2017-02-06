@@ -66,7 +66,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
             {
                 using (var db = new DB())
                 {
-                    var result = db.TableClients.Where(c2 => c2.usuario == db.currentUser).SingleOrDefault();
+                    var result = db.TableClients.Where(c2 => c2.usuario == config.currentUser).SingleOrDefault();
                     result.password = pass;
                     result.nom = n;
                     result.cognom1 = a1;
