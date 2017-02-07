@@ -46,5 +46,13 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
 
             this.Hide();
         }
+
+        private void btFactura_Click(object sender, EventArgs e)
+        {
+            FacturasUser f = new FacturasUser();
+            f.Show();
+
+            this.Hide();
+        }
     }
 }

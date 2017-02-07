@@ -16,5 +16,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
         public int id_producte { get; set; }
         [Column("quantitat")]
         public int quantitat { get; set; }
+        [Column("preu")]
+        public float preu { get; set; }
     }
 }

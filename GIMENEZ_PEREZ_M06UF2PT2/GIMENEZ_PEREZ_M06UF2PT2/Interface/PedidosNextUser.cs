@@ -14,9 +14,9 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
     {
         string producte;
         int quantitatP;
-        int preu;
+        float preuP;
 
-        public PedidosNextUser(string producte, int quantitat, int preu)
+        public PedidosNextUser(string producte, int quantitat, float preu)
         {
             InitializeComponent();
             producto.Text = producte;
@@ -24,7 +24,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
             precio.Text = Convert.ToString(preu);
             this.producte = producte;
             this.quantitatP = quantitat;
-            this.preu = preu;
+            this.preuP = preu;
             DB db = new DB();
             Config config = Config.getInstance();
             usuario.Text = config.currentUser;
@@ -86,7 +86,8 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
                                 {
                                     n_factura = nfactura,
                                     id_producte = p.Id_producte,
-                                    quantitat = quantitatP
+                                    quantitat = quantitatP,
+                                    preu = preuP
                                 };
                                 db.TableFactura_detall.Add(facturaDetall);
                                 db.SaveChanges();

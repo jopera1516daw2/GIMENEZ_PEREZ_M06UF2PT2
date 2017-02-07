@@ -9,7 +9,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
     {
         [Key]
         [Column("n_factura")]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int n_factura { get; set; }
         [Column("id_client")]
         public int id_client { get; set; }

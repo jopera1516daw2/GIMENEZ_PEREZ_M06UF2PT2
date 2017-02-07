@@ -52,6 +52,7 @@
             this.btFactura.TabIndex = 1;
             this.btFactura.Text = "Consultar facturas";
             this.btFactura.UseVisualStyleBackColor = true;
+            this.btFactura.Click += new System.EventHandler(this.btFactura_Click);
             // 
             // button2
             // 

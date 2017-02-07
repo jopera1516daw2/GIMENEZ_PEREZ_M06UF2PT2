@@ -12,7 +12,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
 {
     public partial class PedidosUser : Form
     {
-        int precio = 0;
+        float precio = 0;
         public PedidosUser()
         {
             InitializeComponent();
@@ -52,7 +52,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
         private void cantidad_ValueChanged_1(object sender, EventArgs e)
         {
             string precioS = selectProductos.Text.Split('/')[1];
-            int precio = int.Parse(precioS.Remove(precioS.Length - 1));
+            float precio = float.Parse(precioS.Remove(precioS.Length - 1));
             int c = Convert.ToInt32(cantidad.Value);
             this.precio = precio * c;
             textBox1.Text = this.precio.ToString();
