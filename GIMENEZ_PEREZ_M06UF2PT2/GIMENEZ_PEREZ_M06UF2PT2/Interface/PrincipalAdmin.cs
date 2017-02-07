@@ -81,5 +81,21 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
         {
             
         }
+
+        private void btAdminUser_Click(object sender, EventArgs e)
+        {
+            UsersAdmin u = new UsersAdmin();
+            u.Show();
+
+            this.Hide();
+        }
+
+        private void btAdminProductos_Click(object sender, EventArgs e)
+        {
+            ProductosAdmin u = new ProductosAdmin();
+            u.Show();
+
+            this.Hide();
+        }
     }
 }

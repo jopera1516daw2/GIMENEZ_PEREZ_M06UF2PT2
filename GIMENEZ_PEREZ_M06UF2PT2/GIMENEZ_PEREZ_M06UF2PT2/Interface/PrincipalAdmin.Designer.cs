@@ -42,6 +42,7 @@
             this.btAdminUser.TabIndex = 0;
             this.btAdminUser.Text = "Usuarios";
             this.btAdminUser.UseVisualStyleBackColor = true;
+            this.btAdminUser.Click += new System.EventHandler(this.btAdminUser_Click);
             // 
             // btAdminProductos
             // 
@@ -51,6 +52,7 @@
             this.btAdminProductos.TabIndex = 1;
             this.btAdminProductos.Text = "Productos";
             this.btAdminProductos.UseVisualStyleBackColor = true;
+            this.btAdminProductos.Click += new System.EventHandler(this.btAdminProductos_Click);
             // 
             // button1
             // 
