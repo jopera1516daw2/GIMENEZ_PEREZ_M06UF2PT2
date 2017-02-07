@@ -18,3 +18,11 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
         }
     }
 }
+
+/*
+    DELETE FROM public.factura;
+    DELETE FROM public.comanda;
+    DELETE FROM public.factura_detall;
+    ALTER SEQUENCE factura_n_factura_seq RESTART WITH 1
+    ALTER SEQUENCE comanda_id_comanda_seq RESTART WITH 1
+*/
