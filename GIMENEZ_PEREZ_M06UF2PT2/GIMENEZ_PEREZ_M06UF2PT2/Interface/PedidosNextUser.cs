@@ -39,6 +39,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
             msgerror.Visible = false;
             int id = -1;
             int nfactura = -1;
+            int idProd = -1;
             DB db = new DB();
             foreach (var c in db.TableClients)
             {
@@ -50,11 +51,25 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
 
             if (id != -1)
             {
-                /*try
-                {*/
-                    Console.WriteLine("Entra1");
+                try
+                {
+                    var count = db.TableFactura.Count();
+                    foreach (var f in db.TableFactura)
+                    {
+                        if (--count == 0)
+                        {
+                            nfactura = f.n_factura+1;
+                        }
+                    }
+                    Console.WriteLine(nfactura);
+                    if (nfactura == -1 || nfactura == 0)
+                    {
+                        nfactura = 1;
+                    }
+
                     var factura = new TableFactura
                     {
+                        n_factura = nfactura,
                         id_client = id,
                         data = fecha.Value,
                         descompte = 0,
@@ -62,57 +77,70 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
                     };
                     db.TableFactura.Add(factura);
                     db.SaveChanges();
-
-                    Console.WriteLine("Entra2");
-
-                    var count = db.TableFactura.Count();
-                    foreach (var f in db.TableFactura)
-                    {
-                        if (--count == 0)
-                        {
-                            nfactura = f.n_factura;
-                        }
-                    }
                     
                     if(nfactura != -1) { 
                         foreach (var p in db.TableProductes)
                         {
                             if (p.Producte == producte)
                             {
-                                Console.WriteLine(nfactura);
-                                Console.WriteLine(p.Id_producte);
-                                Console.WriteLine(quantitatP);
-                                var facturaDetall = new TableFactura_detall
-                                {
-                                    n_factura = nfactura,
-                                    id_producte = p.Id_producte,
-                                    quantitat = quantitatP,
-                                    preu = preuP
-                                };
-                                db.TableFactura_detall.Add(facturaDetall);
-                                db.SaveChanges();
-                                var comanda = new TableComanda
-                                {
-                                    n_factura = nfactura,
-                                    id_client = id,
-                                    adreca_comanda = direccion.Text
-                                };
-                                db.TableComanda.Add(comanda);
-                                db.SaveChanges();
-                                msgCorrect.Visible = true;
+                                idProd = p.Id_producte;
+                                
                             }
+                        }
+
+                        if(idProd != -1)
+                        {
+                            var facturaDetall = new TableFactura_detall
+                            {
+                                n_factura = nfactura,
+                                id_producte = idProd,
+                                quantitat = quantitatP,
+                                preu = preuP
+                            };
+                            db.TableFactura_detall.Add(facturaDetall);
+                            db.SaveChanges();
+
+                            int nCom = -1;
+                            var count2 = db.TableComanda.Count();
+                            foreach (var cm in db.TableComanda)
+                            {
+                                if (--count2 == 0)
+                                {
+                                    nCom = cm.id_comanda + 1;
+                                }
+                            }
+                            if (nCom == -1 || nCom == 0)
+                            {
+                                nCom = 1;
+                            }
+
+                            var comanda = new TableComanda
+                            {
+                                id_comanda = nCom,
+                                n_factura = nfactura,
+                                id_client = id,
+                                adreca_comanda = direccion.Text
+                            };
+                            db.TableComanda.Add(comanda);
+                            db.SaveChanges();
+                            msgCorrect.Visible = true;
+                        }else
+                        {
+                            msgerror.Text = "Error al realizar el pedido";
+                            msgerror.Visible = true;
                         }
                     }else
                     {
                         msgerror.Text = "Error al realizar el pedido";
                         msgerror.Visible = true;
                     }
-                /*}
+                }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex);
                     msgerror.Text = "Error al realizar el pedido";
                     msgerror.Visible = true;
-                }*/
+                }
             }else
             {
                 msgerror.Text = "Contraseña incorrecta";
