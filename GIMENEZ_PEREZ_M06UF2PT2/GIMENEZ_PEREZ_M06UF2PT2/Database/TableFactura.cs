@@ -7,10 +7,6 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
     [Table("factura", Schema = "public")]
     public class TableFactura
     {
-        [Key]
-        [Column("n_factura")]
-        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int n_factura { get; set; }
         [Column("id_client")]
         public int id_client { get; set; }
         [Column("data")]
@@ -19,5 +15,9 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
         public int descompte { get; set; }
         [Column("iva")]
         public int iva { get; set; }
+        [Key]
+        [Column("n_factura")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int n_factura { get; set; }
     }
 }

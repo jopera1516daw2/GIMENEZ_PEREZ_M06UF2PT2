@@ -23,37 +23,63 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
             table.Controls.Add(new Label() { Text = "Cantidad" }, 2, 0);
             table.Controls.Add(new Label() { Text = "Importe" }, 3, 0);
 
-            DB db = new DB();
-            Config config = Config.getInstance();
-            config.currentUser = "user";
-            foreach (var c in db.TableClients)
+            try
             {
-                if (c.usuario == config.currentUser)
+                int id = 0;
+                var factura = new List<int>();
+
+                DB db = new DB();
+                Config config = Config.getInstance();
+                config.currentUser = "user";
+                foreach (var c in db.TableClients)
                 {
-                    Console.WriteLine(c.usuario);
-                    Console.WriteLine(c.id_client);
-                    foreach (var f in db.TableFactura)
+                    if (c.usuario == config.currentUser)
                     {
-                        if (f.id_client == c.id_client)
+                        id = c.id_client;
+                    }
+                }
+                
+                int contador = 0;
+                foreach (var f in db.TableFactura)
+                {
+                    if (f.id_client == id)
+                    {
+                        factura.Add(f.n_factura);
+                        contador++;
+                    }
+                }
+                
+                for (int i = 0; i < factura.Count; i++)
+                {
+                    foreach (var fd in db.TableFactura_detall)
+                    {
+                        if (fd.n_factura == factura[i])
                         {
-                            Console.WriteLine(f.n_factura);
-                            foreach (var fd in db.TableFactura_detall)
-                            {
-                                if (fd.n_factura == f.n_factura)
-                                {
-                                    Console.WriteLine(Convert.ToString(f.n_factura) + " / " + Convert.ToString(fd.id_producte) + " / " + Convert.ToString(fd.quantitat) + " / " + Convert.ToString(fd.preu) + " / ");
-                                    table.RowCount = table.RowCount + 1;
-                                    table.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-                                    table.Controls.Add(new Label() { Text = Convert.ToString(f.n_factura) }, 0, table.RowCount + 1);
-                                    table.Controls.Add(new Label() { Text = Convert.ToString(fd.id_producte) }, 1, table.RowCount + 1);
-                                    table.Controls.Add(new Label() { Text = Convert.ToString(fd.quantitat) }, 2, table.RowCount + 1);
-                                    table.Controls.Add(new Label() { Text = Convert.ToString(fd.preu) }, 3, table.RowCount + 1);
-                                }
-                            }
+                            Console.WriteLine(Convert.ToString(fd.n_factura) + " / " + Convert.ToString(fd.id_producte) + " / " + Convert.ToString(fd.quantitat) + " / " + Convert.ToString(fd.preu) + " / ");
+
+                            table.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                            table.RowCount += 1;
+                            table.Controls.Add(new Label() { Text = Convert.ToString(fd.n_factura) }, 0, table.RowCount - 1);
+                            table.Controls.Add(new Label() { Text = Convert.ToString(fd.id_producte) }, 1, table.RowCount - 1);
+                            table.Controls.Add(new Label() { Text = Convert.ToString(fd.quantitat) }, 2, table.RowCount - 1);
+                            table.Controls.Add(new Label() { Text = Convert.ToString(fd.preu) }, 3, table.RowCount - 1);
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex); // or log to file, etc.
+                //throw;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GIMENEZ_PEREZ_M06UF2PT2.Interface.PrincipalUser u = new GIMENEZ_PEREZ_M06UF2PT2.Interface.PrincipalUser();
+            u.Show();
+
+            this.Hide();
         }
     }
 }

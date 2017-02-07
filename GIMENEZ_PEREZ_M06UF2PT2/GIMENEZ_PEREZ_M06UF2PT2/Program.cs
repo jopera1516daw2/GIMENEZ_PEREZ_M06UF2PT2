@@ -13,8 +13,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Start());
-            Application.Run(new GIMENEZ_PEREZ_M06UF2PT2.Interface.FacturasUser());
+            Application.Run(new Start());
 
         }
     }
