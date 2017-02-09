@@ -22,24 +22,42 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
             string usuario = nuUser.Text;
             string password = nuPassword.Text;
             DB db = new DB();
-
-            var cliente = new TableClients {
-                usuario = nuUser.Text,
-                password = nuPassword.Text,
-                type = 0,
-                codi_postal = 0,
-                telefon = 0,
-                fax = 0,
-                email = "",
-                poblacio = "",
-                provincia = "",
-                adreca ="",
-                cognom1 ="",
-                nom ="",
-                cognom2 =""
-            };
-            db.TableClients.Add(cliente);
-            db.SaveChanges();
+            int nextId = -1;
+            try{
+                var count = db.TableClients.Count();
+                foreach (var c in db.TableClients)
+                {
+                    if (--count == 0)
+                    {
+                        nextId = c.id_client + 1;
+                    }
+                }
+                if(nextId == -1 || nextId == 0)
+                {
+                    nextId = 1;
+                }
+                var cliente = new TableClients {
+                    usuario = nuUser.Text,
+                    password = nuPassword.Text,
+                    type = 0,
+                    codi_postal = 0,
+                    telefon = 0,
+                    fax = 0,
+                    email = "",
+                    poblacio = "",
+                    provincia = "",
+                    adreca = "",
+                    cognom1 = "",
+                    nom = "",
+                    cognom2 = "",
+                    id_client = nextId
+                };
+                db.TableClients.Add(cliente);
+                db.SaveChanges();
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
 
             Start goBack = new Start();
             goBack.Show();
