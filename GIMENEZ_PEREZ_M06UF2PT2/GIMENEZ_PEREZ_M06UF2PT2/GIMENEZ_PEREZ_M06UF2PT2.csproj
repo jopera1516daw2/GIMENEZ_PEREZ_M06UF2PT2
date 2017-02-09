@@ -154,12 +154,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\DB.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interface\Config.cs" />
     <Compile Include="Interface\FacturasUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interface\FacturasUser.Designer.cs">
       <DependentUpon>FacturasUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\ImportAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\ImportAdmin.Designer.cs">
+      <DependentUpon>ImportAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Interface\PerfilUser.cs">
       <SubType>Form</SubType>
@@ -234,8 +246,14 @@
     <Compile Include="Database\TableFactura_detall.cs" />
     <Compile Include="Database\TableProductes.cs" />
     <Compile Include="Database\TableFactura.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interface\FacturasUser.resx">
       <DependentUpon>FacturasUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\ImportAdmin.resx">
+      <DependentUpon>ImportAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interface\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -280,6 +298,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\TableClients.datasource" />
+    <None Include="Properties\DataSources\TableComanda.datasource" />
+    <None Include="Properties\DataSources\TableFactura.datasource" />
+    <None Include="Properties\DataSources\TableFactura_detall.datasource" />
+    <None Include="Properties\DataSources\TableProductes.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

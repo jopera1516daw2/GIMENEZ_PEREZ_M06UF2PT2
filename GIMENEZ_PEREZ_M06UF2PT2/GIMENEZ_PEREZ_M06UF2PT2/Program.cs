@@ -13,16 +13,19 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Start());
+            //Application.Run(new Start());
+            Application.Run(new GIMENEZ_PEREZ_M06UF2PT2.Interface.ImportAdmin());
 
         }
     }
 }
 
 /*
+    DELETE FROM public.clients;
     DELETE FROM public.factura;
     DELETE FROM public.comanda;
     DELETE FROM public.factura_detall;
+    ALTER SEQUENCE clients_id_client_seq RESTART WITH 1
     ALTER SEQUENCE factura_n_factura_seq RESTART WITH 1
     ALTER SEQUENCE comanda_id_comanda_seq RESTART WITH 1
 */

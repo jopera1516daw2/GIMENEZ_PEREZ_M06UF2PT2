@@ -21,64 +21,73 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
         private void button1_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-            XNamespace ns = "http://CSEFStoreXmlFiles";
-            XElement clientsXml = new XElement(ns + "clients",
+            XElement clientsXml = new XElement("tabla",
                 from c in db.TableClients.AsEnumerable()
-                select new XElement(ns + "clients",
-                    c.id_client == null ? null : new XElement(ns + "id_client", c.id_client),
-                    c.usuario == null ? null : new XElement(ns + "usuario", c.usuario),
-                    c.password == null ? null : new XElement(ns + "password", c.password),
-                    c.nom == null ? null : new XElement(ns + "nom", c.nom),
-                    c.cognom1 == null ? null : new XElement(ns + "cognom1", c.cognom1),
-                    c.cognom2 == null ? null : new XElement(ns + "cognom2", c.cognom2),
-                    c.adreca == null ? null : new XElement(ns + "adreca", c.adreca),
-                    c.codi_postal == null ? null : new XElement(ns + "codi_postal", c.codi_postal),
-                    c.poblacio == null ? null : new XElement(ns + "poblacio", c.poblacio),
-                    c.provincia == null ? null : new XElement(ns + "provincia", c.provincia),
-                    c.telefon == null ? null : new XElement(ns + "telefon", c.telefon),
-                    c.email == null ? null : new XElement(ns + "email", c.email),
-                    c.fax == null ? null : new XElement(ns + "fax", c.fax),
-                    c.type == null ? null : new XElement(ns + "type", c.type)));
+                select new XElement("clients",
+                    c.id_client == null ? null : new XElement("id_client", c.id_client),
+                    c.usuario == null ? null : new XElement("usuario", c.usuario),
+                    c.password == null ? null : new XElement("password", c.password),
+                    c.nom == null ? null : new XElement("nom", c.nom),
+                    c.cognom1 == null ? null : new XElement("cognom1", c.cognom1),
+                    c.cognom2 == null ? null : new XElement("cognom2", c.cognom2),
+                    c.adreca == null ? null : new XElement("adreca", c.adreca),
+                    c.codi_postal == null ? null : new XElement("codi_postal", c.codi_postal),
+                    c.poblacio == null ? null : new XElement("poblacio", c.poblacio),
+                    c.provincia == null ? null : new XElement("provincia", c.provincia),
+                    c.telefon == null ? null : new XElement("telefon", c.telefon),
+                    c.email == null ? null : new XElement("email", c.email),
+                    c.fax == null ? null : new XElement("fax", c.fax),
+                    c.type == null ? null : new XElement("type", c.type)));
             clientsXml.Save(@"..\XML\clients.xml");
+            clientsXml.Save(@"..\XML\BACKUP\clients.xml");
 
-            XElement comandaXml = new XElement(ns + "comanda",
+            XElement comandaXml = new XElement("tabla",
                 from c in db.TableComanda.AsEnumerable()
-                select new XElement(ns + "comanda",
-                    c.id_comanda == null ? null : new XElement(ns + "id_comanda", c.id_comanda),
-                    c.n_factura == null ? null : new XElement(ns + "n_factura", c.n_factura),
-                    c.id_client == null ? null : new XElement(ns + "id_client", c.id_client),
-                    c.adreca_comanda == null ? null : new XElement(ns + "adreca_comanda", c.adreca_comanda)));
+                select new XElement("comanda",
+                    c.id_comanda == null ? null : new XElement("id_comanda", c.id_comanda),
+                    c.n_factura == null ? null : new XElement("n_factura", c.n_factura),
+                    c.id_client == null ? null : new XElement("id_client", c.id_client),
+                    c.adreca_comanda == null ? null : new XElement("adreca_comanda", c.adreca_comanda)));
             comandaXml.Save(@"..\XML\comanda.xml");
+            comandaXml.Save(@"..\XML\BACKUP\comanda.xml");
 
-            XElement facturaXml = new XElement(ns + "factura",
+            XElement facturaXml = new XElement("tabla",
                 from c in db.TableFactura.AsEnumerable()
-                select new XElement(ns + "factura",
-                    c.n_factura == null ? null : new XElement(ns + "n_factura", c.n_factura),
-                    c.id_client == null ? null : new XElement(ns + "id_client", c.id_client),
-                    c.data == null ? null : new XElement(ns + "data", c.data),
-                    c.iva == null ? null : new XElement(ns + "iva", c.iva),
-                    c.descompte == null ? null : new XElement(ns + "descompte", c.descompte)));
+                select new XElement("factura",
+                    c.n_factura == null ? null : new XElement("n_factura", c.n_factura),
+                    c.id_client == null ? null : new XElement("id_client", c.id_client),
+                    c.data == null ? null : new XElement("data", c.data),
+                    c.iva == null ? null : new XElement("iva", c.iva),
+                    c.descompte == null ? null : new XElement("descompte", c.descompte)));
             facturaXml.Save(@"..\XML\factura.xml");
+            facturaXml.Save(@"..\XML\BACKUP\factura.xml");
 
-            XElement facturaDetallXml = new XElement(ns + "facturaDetall",
+            XElement facturaDetallXml = new XElement("tabla",
                 from c in db.TableFactura_detall.AsEnumerable()
-                select new XElement(ns + "facturaDetall",
-                    c.n_factura == null ? null : new XElement(ns + "n_factura", c.n_factura),
-                    c.id_producte == null ? null : new XElement(ns + "id_producte", c.id_producte),
-                    c.quantitat == null ? null : new XElement(ns + "quantitat", c.quantitat)));
+                select new XElement("facturaDetall",
+                    c.n_factura == null ? null : new XElement("n_factura", c.n_factura),
+                    c.id_producte == null ? null : new XElement("id_producte", c.id_producte),
+                    c.quantitat == null ? null : new XElement("quantitat", c.quantitat)));
             facturaDetallXml.Save(@"..\XML\facturaDetall.xml");
+            facturaDetallXml.Save(@"..\XML\BACKUP\facturaDetall.xml");
 
-            XElement producteXml = new XElement(ns + "producte",
+            XElement producteXml = new XElement("tabla",
                 from c in db.TableProductes.AsEnumerable()
-                select new XElement(ns + "producte",
-                    c.Id_producte == null ? null : new XElement(ns + "id_producte", c.Id_producte),
-                    c.Producte == null ? null : new XElement(ns + "producte", c.Producte),
-                    c.Preu == null ? null : new XElement(ns + "preu", c.Preu)));
+                select new XElement("producte",
+                    c.Id_producte == null ? null : new XElement("id_producte", c.Id_producte),
+                    c.Producte == null ? null : new XElement("producte", c.Producte),
+                    c.Preu == null ? null : new XElement("preu", c.Preu)));
             producteXml.Save(@"..\XML\producte.xml");
+            producteXml.Save(@"..\XML\BACKUP\producte.xml");
+            msg.Visible = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            ImportAdmin i = new ImportAdmin();
+            i.Show();
+
+            this.Hide();
             
         }
 

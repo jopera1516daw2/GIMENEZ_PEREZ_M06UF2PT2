@@ -15,6 +15,6 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
         [Column("producte")]
         public string Producte { get; set; }
         [Column("preu")]
-        public int Preu { get; set; }
+        public float Preu { get; set; }
     }
 }
