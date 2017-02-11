@@ -112,13 +112,13 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
                 doc = XDocument.Load(@"..\XML\producte.xml");
                 foreach (XElement elem in doc.Descendants("producte"))
                 {
-                    var producte = new TableProductes
+                    /*var producte = new TableProductes
                     {
                         Id_producte = Convert.ToInt32(elem.Element("id_producte").Value),
                         Producte =elem.Element("producte").Value,
                         Preu = Convert.ToInt32(elem.Element("preu").Value)
                     };
-                    db.TableProductes.Add(producte);
+                    db.TableProductes.Add(producte);*/
                 }
                 db.SaveChanges();
 
