@@ -63,6 +63,6 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface{
 
             this.Hide();
         }
-        
+
     }
 }

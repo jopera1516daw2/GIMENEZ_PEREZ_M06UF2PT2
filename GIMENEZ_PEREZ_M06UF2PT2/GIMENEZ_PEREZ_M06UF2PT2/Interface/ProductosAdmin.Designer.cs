@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductosAdmin));
             this.btnAtras = new System.Windows.Forms.Button();
             this.eliminar = new System.Windows.Forms.RadioButton();
             this.crear = new System.Windows.Forms.RadioButton();
@@ -142,6 +143,8 @@
             this.Controls.Add(this.precio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.producto);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ProductosAdmin";
             this.Text = "ProductosAdmin";
             this.ResumeLayout(false);

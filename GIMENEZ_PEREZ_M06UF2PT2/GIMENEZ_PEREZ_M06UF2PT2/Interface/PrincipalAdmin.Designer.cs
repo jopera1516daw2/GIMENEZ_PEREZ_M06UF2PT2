@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalAdmin));
             this.btAdminUser = new System.Windows.Forms.Button();
             this.btAdminProductos = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -109,6 +110,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btAdminProductos);
             this.Controls.Add(this.btAdminUser);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "PrincipalAdmin";
             this.Text = "PrincipalAdmin";
             this.ResumeLayout(false);

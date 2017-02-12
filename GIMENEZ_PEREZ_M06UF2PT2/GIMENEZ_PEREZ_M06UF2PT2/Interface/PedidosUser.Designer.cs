@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidosUser));
             this.selectProductos = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,10 +44,11 @@
             // 
             // selectProductos
             // 
+            this.selectProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectProductos.FormattingEnabled = true;
             this.selectProductos.Location = new System.Drawing.Point(89, 74);
             this.selectProductos.Name = "selectProductos";
-            this.selectProductos.Size = new System.Drawing.Size(151, 21);
+            this.selectProductos.Size = new System.Drawing.Size(283, 23);
             this.selectProductos.TabIndex = 1;
             // 
             // label1
@@ -90,7 +92,7 @@
             0,
             0});
             this.cantidad.Name = "cantidad";
-            this.cantidad.Size = new System.Drawing.Size(151, 20);
+            this.cantidad.Size = new System.Drawing.Size(56, 20);
             this.cantidad.TabIndex = 5;
             this.cantidad.Value = new decimal(new int[] {
             1,
@@ -133,7 +135,7 @@
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(89, 178);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 20);
+            this.textBox1.Size = new System.Drawing.Size(56, 20);
             this.textBox1.TabIndex = 13;
             // 
             // msg
@@ -152,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(384, 261);
             this.Controls.Add(this.msg);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
@@ -163,6 +165,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.selectProductos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "PedidosUser";
             this.Text = "PedidosUser";
             ((System.ComponentModel.ISupportInitialize)(this.cantidad)).EndInit();

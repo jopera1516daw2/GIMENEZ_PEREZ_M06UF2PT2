@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalUser));
             this.btPedido = new System.Windows.Forms.Button();
             this.btFactura = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -83,6 +84,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btFactura);
             this.Controls.Add(this.btPedido);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "PrincipalUser";
             this.Text = "PrincipalUser";
             this.ResumeLayout(false);
