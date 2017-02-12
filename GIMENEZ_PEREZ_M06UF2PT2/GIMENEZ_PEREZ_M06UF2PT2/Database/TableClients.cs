@@ -2,11 +2,13 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GIMENEZ_PEREZ_M06UF2PT2
-{
+namespace GIMENEZ_PEREZ_M06UF2PT2{
+
+    /// <summary>
+    /// Clase que da acceso a la tabla "clients" mediante código
+    /// </summary>
     [Table("clients", Schema = "public")]
-    public class TableClients
-    {
+    public class TableClients { 
         [Key]
         [Column("id_client")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]

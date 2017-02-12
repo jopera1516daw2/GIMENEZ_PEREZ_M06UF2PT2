@@ -9,17 +9,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
-{
-    public partial class PrincipalAdmin : Form
-    {
-        public PrincipalAdmin()
-        {
+namespace GIMENEZ_PEREZ_M06UF2PT2.Interface{
+    /// <summary>
+    /// Clase de "PrincipalAdmin"
+    /// </summary>
+    public partial class PrincipalAdmin : Form{
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public PrincipalAdmin(){
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Método que se ocupa de exportar la base de datos a xml
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e){
             DB db = new DB();
             XElement clientsXml = new XElement("tabla",
                 from c in db.TableClients.AsEnumerable()
@@ -81,34 +87,45 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
             producteXml.Save(@"..\XML\BACKUP\producte.xml");
             msg.Visible = true;
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Método que inicia el formulario "ImportAdmin"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e){
             ImportAdmin i = new ImportAdmin();
             i.Show();
 
-            this.Hide();
-            
+            this.Hide();      
         }
-
-        private void btAdminUser_Click(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Método que inicia el formulario "UserAdmin"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btAdminUser_Click(object sender, EventArgs e){
             UsersAdmin u = new UsersAdmin();
             u.Show();
 
             this.Hide();
         }
-
-        private void btAdminProductos_Click(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Método que inicia el formulario "ProductosAdmin"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btAdminProductos_Click(object sender, EventArgs e){
             ProductosAdmin u = new ProductosAdmin();
             u.Show();
 
             this.Hide();
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Método que regresa al inicio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button3_Click(object sender, EventArgs e){
             Start s = new Start();
             s.Show();
 

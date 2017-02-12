@@ -10,36 +10,42 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
-{
-    public partial class ImportAdmin : Form
-    {
-        public ImportAdmin()
-        {
+namespace GIMENEZ_PEREZ_M06UF2PT2.Interface{
+    /// <summary>
+    /// CLase del formulario "ImportAdmin"
+    /// </summary>
+    public partial class ImportAdmin : Form{
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public ImportAdmin(){
             InitializeComponent();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Método para regresar al anterior formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e){
             GIMENEZ_PEREZ_M06UF2PT2.Interface.PrincipalAdmin u = new GIMENEZ_PEREZ_M06UF2PT2.Interface.PrincipalAdmin();
             u.Show();
 
             this.Hide();
         }
-
-        private void dropandcreate_Click(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Método que se ocupa de eliminar la base de datos y crea una nueva
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dropandcreate_Click(object sender, EventArgs e){
             msg.Visible = false;
-            try
-            {
+            try{
                 DB db = new DB();
                 db.TableClients.RemoveRange(db.TableClients.Where(x => x.id_client >= 0));
                 db.SaveChanges();
                 var doc = XDocument.Load(@"..\XML\clients.xml");
-                foreach (XElement elem in doc.Descendants("clients"))
-                {
-                    var cliente = new TableClients
-                    {
+                foreach (XElement elem in doc.Descendants("clients")){
+                    var cliente = new TableClients{
                         usuario = elem.Element("usuario").Value,
                         password = elem.Element("password").Value,
                         type = Convert.ToInt32(elem.Element("type").Value),
@@ -62,10 +68,8 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
                 db.TableComanda.RemoveRange(db.TableComanda.Where(x => x.id_comanda >= 0));
                 db.SaveChanges();
                 doc = XDocument.Load(@"..\XML\comanda.xml");
-                foreach (XElement elem in doc.Descendants("comanda"))
-                {
-                    var comanda = new TableComanda
-                    {
+                foreach (XElement elem in doc.Descendants("comanda")){
+                    var comanda = new TableComanda{
                         id_comanda = Convert.ToInt32(elem.Element("id_comanda").Value),
                         n_factura = Convert.ToInt32(elem.Element("n_factura").Value),
                         id_client = Convert.ToInt32(elem.Element("id_client").Value),
@@ -78,10 +82,8 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
                 db.TableFactura.RemoveRange(db.TableFactura.Where(x => x.n_factura >= 0));
                 db.SaveChanges();
                 doc = XDocument.Load(@"..\XML\factura.xml");
-                foreach (XElement elem in doc.Descendants("fatura"))
-                {
-                    var factura = new TableFactura
-                    {
+                foreach (XElement elem in doc.Descendants("fatura")){
+                    var factura = new TableFactura{
                         n_factura = Convert.ToInt32(elem.Element("n_factura").Value),
                         id_client = Convert.ToInt32(elem.Element("id_client").Value),
                         data = Convert.ToDateTime(elem.Element("data").Value),
@@ -95,10 +97,8 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
                 db.TableFactura_detall.RemoveRange(db.TableFactura_detall.Where(x => x.n_factura >= 0));
                 db.SaveChanges();
                 doc = XDocument.Load(@"..\XML\facturaDetall.xml");
-                foreach (XElement elem in doc.Descendants("facturaDetall"))
-                {
-                    var factura_detall = new TableFactura_detall
-                    {
+                foreach (XElement elem in doc.Descendants("facturaDetall")){
+                    var factura_detall = new TableFactura_detall{
                         n_factura = Convert.ToInt32(elem.Element("n_factura").Value),
                         id_producte = Convert.ToInt32(elem.Element("id_producte").Value),
                         quantitat = Convert.ToInt32(elem.Element("quantitat").Value)
@@ -110,8 +110,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
                 db.TableProductes.RemoveRange(db.TableProductes.Where(x => x.Id_producte >= 0));
                 db.SaveChanges();
                 doc = XDocument.Load(@"..\XML\producte.xml");
-                foreach (XElement elem in doc.Descendants("producte"))
-                {
+                foreach (XElement elem in doc.Descendants("producte")){
                     /*var producte = new TableProductes
                     {
                         Id_producte = Convert.ToInt32(elem.Element("id_producte").Value),
@@ -124,8 +123,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
 
                 msg.Visible = true;
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
                 Console.WriteLine(ex);
             }
         }

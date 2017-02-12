@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GIMENEZ_PEREZ_M06UF2PT2
-{
-    static class Program
-    {
+namespace GIMENEZ_PEREZ_M06UF2PT2{
+    static class Program{
+        /// <summary>
+        /// Main
+        /// </summary>
         [STAThread]
-        static void Main()
-        {
+        static void Main(){
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Start());

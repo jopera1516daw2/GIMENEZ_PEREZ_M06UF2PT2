@@ -8,17 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GIMENEZ_PEREZ_M06UF2PT2
-{
-    public partial class NewUser : Form
-    {
-        public NewUser()
-        {
+namespace GIMENEZ_PEREZ_M06UF2PT2 {
+    /// <summary>
+    /// Clase del formulario "NewUser"
+    /// </summary>
+    public partial class NewUser : Form {
+        /// <summary>
+        /// COnstructor de "NewUser"
+        /// </summary>
+        public NewUser(){
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Método que se encarga de añadir un nuevo usuario a la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e){
             string usuario = nuUser.Text;
             string password = nuPassword.Text;
             DB db = new DB();
@@ -63,9 +69,12 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
             goBack.Show();
             this.Hide();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Botón que comunica el actual formulario con el de inicio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e){
             Start s = new Start();
             s.Show();
 

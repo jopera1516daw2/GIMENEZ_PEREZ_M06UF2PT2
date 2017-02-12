@@ -8,27 +8,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GIMENEZ_PEREZ_M06UF2PT2
-{
-    public partial class Login : Form
-    {
-        public Login()
-        {
+namespace GIMENEZ_PEREZ_M06UF2PT2{
+    /// <summary>
+    /// Clase que contiene el formulario de "login"
+    /// </summary>
+    public partial class Login : Form{
+        /// <summary>
+        /// Construcotor de la clase login
+        /// </summary>
+        public Login() {
             InitializeComponent();
             msgerror.Visible = false;
         }
-        
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
+        /// <summary>
+        /// Método que da paso al formulario para recuperar la contraseña
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             GIMENEZ_PEREZ_M06UF2PT2.Interface.RestorePass r = new GIMENEZ_PEREZ_M06UF2PT2.Interface.RestorePass();
             r.Show();
 
             this.Hide();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Método que se encarga de hacer la comprobación en base de datos para ver si el usuario existe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click_1(object sender, EventArgs e) {
             msgerror.Visible = false;
             bool entra = false;
             bool entraAdmin = false;
@@ -75,7 +85,11 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
             }
 
         }
-
+        /// <summary>
+        /// Método que comunica el actual formulario con el siguiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             msgerror.Visible = false;

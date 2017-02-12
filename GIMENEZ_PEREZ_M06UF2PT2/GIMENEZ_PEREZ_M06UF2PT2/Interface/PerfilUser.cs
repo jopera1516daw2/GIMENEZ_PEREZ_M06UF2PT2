@@ -8,21 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
-{
-    public partial class PerfilUser : Form
-    {
-        public PerfilUser()
-        {
+namespace GIMENEZ_PEREZ_M06UF2PT2.Interface{
+    /// <summary>
+    /// CLase del formulario "PerfilUser"
+    /// </summary>
+    public partial class PerfilUser : Form{
+        /// <summary>
+        /// Constructor 
+        /// </summary>
+        public PerfilUser(){
             InitializeComponent();
             DB db = new DB();
             Config config = Config.getInstance();
 
             usuario.Text = config.currentUser;
-            foreach (var c in db.TableClients)
-            {
-                if (c.usuario == config.currentUser)
-                {
+            foreach (var c in db.TableClients){
+                if (c.usuario == config.currentUser){
                     password.Text = c.password;
                     nombre.Text = c.nom;
                     apellido1.Text = c.cognom1;
@@ -37,17 +38,23 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
                 }
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Método para regresar al anterior formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e){
             GIMENEZ_PEREZ_M06UF2PT2.Interface.PrincipalUser u = new GIMENEZ_PEREZ_M06UF2PT2.Interface.PrincipalUser();
             u.Show();
 
             this.Hide();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Método para guardar los datos que hemos modificado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e){
             msgconfirm.Visible = false;
             msgerror.Visible = false;
             String pass = password.Text;
@@ -62,10 +69,8 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
             String dir = direccion.Text;
             String em = email.Text;
             Config config = Config.getInstance();
-            try
-            {
-                using (var db = new DB())
-                {
+            try{
+                using (var db = new DB()){
                     var result = db.TableClients.Where(c2 => c2.usuario == config.currentUser).SingleOrDefault();
                     result.password = pass;
                     result.nom = n;
@@ -84,8 +89,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface
                     config.currentDireccion = dir;
                 }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
                 msgerror.Visible = true;
             }
         }

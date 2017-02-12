@@ -9,16 +9,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace GIMENEZ_PEREZ_M06UF2PT2
-{
-    public partial class Start : Form
-    {
-        public Start()
-        {
+namespace GIMENEZ_PEREZ_M06UF2PT2{
+    /// <summary>
+    /// Clase del formulario con el que inicia la app
+    /// </summary>
+    public partial class Start : Form{
+        /// <summary>
+        /// Construcor de la clase start
+        /// </summary>
+        public Start(){
             InitializeComponent();
             DB db = new DB();
         }
-
+        /// <summary>
+        /// Botón para acceder al formulario de login
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             Login l1 = new Login();
@@ -27,7 +34,11 @@ namespace GIMENEZ_PEREZ_M06UF2PT2
             this.Hide();
 
         }
-
+        /// <summary>
+        /// Bontón para acceder al formulario de crear usuarios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             NewUser nw1 = new NewUser();

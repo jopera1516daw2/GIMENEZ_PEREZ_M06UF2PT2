@@ -2,11 +2,12 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GIMENEZ_PEREZ_M06UF2PT2
-{
+namespace GIMENEZ_PEREZ_M06UF2PT2 {
+    /// <summary>
+    /// Clase que da acceso a la tabla "factura" mediante código
+    /// </summary>
     [Table("factura", Schema = "public")]
-    public class TableFactura
-    {
+    public class TableFactura { 
         [Column("id_client")]
         public int id_client { get; set; }
         [Column("data")]
