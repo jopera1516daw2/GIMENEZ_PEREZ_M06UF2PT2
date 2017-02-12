@@ -19,6 +19,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface{
         /// </summary>
         public PedidosUser(){
             InitializeComponent();
+            msg.Visible = false;
             bool contador = false;
             DB db = new DB();
             var productos = db.TableProductes;
@@ -38,6 +39,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface{
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e){
+            msg.Visible = false;
             PedidosNextUser p = new PedidosNextUser(selectProductos.Text.Split('/')[0], Convert.ToInt32(cantidad.Value), this.precio);
             p.Show();
 
@@ -60,12 +62,16 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface{
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void cantidad_ValueChanged_1(object sender, EventArgs e){
-            string precioS = selectProductos.Text.Split('/')[1];
-            float precio = float.Parse(precioS.Remove(precioS.Length - 1));
-            int c = Convert.ToInt32(cantidad.Value);
-            this.precio = precio * c;
-            textBox1.Text = this.precio.ToString();
-            Console.WriteLine(this.precio);
+            try{
+                string precioS = selectProductos.Text.Split('/')[1];
+                float precio = float.Parse(precioS.Remove(precioS.Length - 1));
+                int c = Convert.ToInt32(cantidad.Value);
+                this.precio = precio * c;
+                textBox1.Text = this.precio.ToString();
+                Console.WriteLine(this.precio);
+            }catch(Exception ex){
+                msg.Visible = true;
+            }
 
         }
     }

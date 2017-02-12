@@ -63,6 +63,7 @@
             this.merge.TabIndex = 21;
             this.merge.Text = "Merge";
             this.merge.UseVisualStyleBackColor = true;
+            this.merge.Click += new System.EventHandler(this.merge_Click);
             // 
             // undo
             // 
@@ -72,6 +73,7 @@
             this.undo.TabIndex = 22;
             this.undo.Text = "Undo";
             this.undo.UseVisualStyleBackColor = true;
+            this.undo.Click += new System.EventHandler(this.undo_Click);
             // 
             // msg
             // 

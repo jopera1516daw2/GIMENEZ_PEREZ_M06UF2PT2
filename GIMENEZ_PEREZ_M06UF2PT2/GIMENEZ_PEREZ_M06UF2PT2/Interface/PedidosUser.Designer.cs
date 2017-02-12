@@ -37,6 +37,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.msg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cantidad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,11 +136,24 @@
             this.textBox1.Size = new System.Drawing.Size(151, 20);
             this.textBox1.TabIndex = 13;
             // 
+            // msg
+            // 
+            this.msg.AutoSize = true;
+            this.msg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msg.ForeColor = System.Drawing.Color.Red;
+            this.msg.Location = new System.Drawing.Point(25, 221);
+            this.msg.Name = "msg";
+            this.msg.Size = new System.Drawing.Size(120, 13);
+            this.msg.TabIndex = 29;
+            this.msg.Text = "Selecciona un producto";
+            this.msg.Visible = false;
+            // 
             // PedidosUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.msg);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
@@ -168,5 +182,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label msg;
     }
 }

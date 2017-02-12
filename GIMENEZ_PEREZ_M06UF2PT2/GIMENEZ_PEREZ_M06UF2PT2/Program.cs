@@ -13,8 +13,7 @@ namespace GIMENEZ_PEREZ_M06UF2PT2{
         static void Main(){
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Start());
-            Application.Run(new GIMENEZ_PEREZ_M06UF2PT2.Interface.ImportAdmin());
+            Application.Run(new Start());
 
         }
     }

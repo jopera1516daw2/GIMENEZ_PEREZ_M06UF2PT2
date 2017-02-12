@@ -79,12 +79,12 @@ namespace GIMENEZ_PEREZ_M06UF2PT2.Interface{
 
             XElement producteXml = new XElement("tabla",
                 from c in db.TableProductes.AsEnumerable()
-                select new XElement("producte",
+                select new XElement("productes",
                     c.Id_producte == null ? null : new XElement("id_producte", c.Id_producte),
                     c.Producte == null ? null : new XElement("producte", c.Producte),
                     c.Preu == null ? null : new XElement("preu", c.Preu)));
-            producteXml.Save(@"..\XML\producte.xml");
-            producteXml.Save(@"..\XML\BACKUP\producte.xml");
+            producteXml.Save(@"..\XML\productes.xml");
+            producteXml.Save(@"..\XML\BACKUP\productes.xml");
             msg.Visible = true;
         }
         /// <summary>
