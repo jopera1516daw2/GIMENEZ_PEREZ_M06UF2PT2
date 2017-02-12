@@ -110,6 +110,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btAdminProductos);
             this.Controls.Add(this.btAdminUser);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "PrincipalAdmin";

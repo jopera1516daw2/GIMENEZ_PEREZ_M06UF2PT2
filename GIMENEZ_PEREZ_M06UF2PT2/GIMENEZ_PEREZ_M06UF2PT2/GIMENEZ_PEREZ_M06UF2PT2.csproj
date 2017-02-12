@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4EC37597-C4E4-4DC4-BF41-D4239D97A33D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GIMENEZ_PEREZ_M06UF2PT2</RootNamespace>
     <AssemblyName>GIMENEZ_PEREZ_M06UF2PT2</AssemblyName>
@@ -48,8 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>GIMENEZ_PEREZ_M06UF2PT2.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>bskt.ico</ApplicationIcon>
